@@ -25,15 +25,15 @@ MongoClient.connect(connectionURL,(error,client)=>{
 
 //********create operation********
 
-    // db.collection('users').insertOne({
-    //     name : 'sushma',
-    //     age : 20 
-    // },(error,result)=>{
-    //     if(error){
-    //         return console.log(error,'unable to insert document');
-    //     }
-    //     console.log(result.ops);
-    // });
+    db.collection('users').insertOne({
+        name : 'Sumanth',
+        age : 21 
+    },(error,result)=>{
+        if(error){
+            return console.log(error,'unable to insert document');
+        }
+        console.log(result.ops);
+    });
 
     // db.collection('tasks').insertMany([
     //     {
