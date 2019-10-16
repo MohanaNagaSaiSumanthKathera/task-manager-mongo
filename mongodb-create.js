@@ -26,8 +26,8 @@ MongoClient.connect(connectionURL,(error,client)=>{
 //********create operation********
 
     db.collection('users').insertOne({
-        name : 'Sumanth',
-        age : 21 
+        name : 'Bujji koona',
+        age : 20
     },(error,result)=>{
         if(error){
             return console.log(error,'unable to insert document');
@@ -53,4 +53,6 @@ MongoClient.connect(connectionURL,(error,client)=>{
     //     }
     //     console.log(result.ops);
     // })
+
+    client.close();
 });
