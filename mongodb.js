@@ -1,5 +1,15 @@
-const mongodb = require('mongodb');
-const MongoClient = mongodb.MongoClient;
+// const mongodb = require('mongodb');
+// const MongoClient = mongodb.MongoClient;
+// const ObjectID = mongodb.ObjectID;
+
+//destructuring above 3 lines
+
+const {MongoClient,ObjectID} = require('mongodb');
+
+// const id = new ObjectID;
+// console.log(id);
+// console.log(id.id);
+// console.log(id.toHexString());
 
 const connectionURL = 'mongodb://127.0.0.1:27017/';
 const databaseName = 'task-manager';
@@ -25,22 +35,22 @@ MongoClient.connect(connectionURL,(error,client)=>{
     //     console.log(result.ops);
     // });
 
-    db.collection('tasks').insertMany([
-        {
-            description : 'Clean the house',
-            completed : true
-        },{
-            description : 'Fill water bottles',
-            completed: false
-        },{
-            description : 'Warm the milk',
-            completed : true
-        }
+    // db.collection('tasks').insertMany([
+    //     {
+    //         description : 'Clean the house',
+    //         completed : true
+    //     },{
+    //         description : 'Fill water bottles',
+    //         completed: false
+    //     },{
+    //         description : 'Warm the milk',
+    //         completed : true
+    //     }
 
-    ],(error,result)=>{
-        if(error){
-            return console.log(error,'unable to insert the document');
-        }
-        console.log(result.ops);
-    })
+    // ],(error,result)=>{
+    //     if(error){
+    //         return console.log(error,'unable to insert the document');
+    //     }
+    //     console.log(result.ops);
+    // })
 });
