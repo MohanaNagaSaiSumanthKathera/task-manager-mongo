@@ -34,3 +34,17 @@ app.listen(port,()=>{
 // }
 
 // myfunc();
+
+//using jwt tokens demo
+
+// const jwt = require('jsonwebtoken');
+
+// const myfunc = async()=>{
+//     const token = await jwt.sign({_id: 121321},"SushmaKoona",{expiresIn:"7d"});
+//     console.log(token);
+
+//     const value = await jwt.verify(token,"SushmaKoona");
+//     console.log(value);
+// }
+
+// myfunc();
