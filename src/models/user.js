@@ -21,6 +21,7 @@ const userSchema = new mongoose.Schema({
     },
     email:{
         type: String,
+        unique: true, //when added in middle, drop db to apply the change
         required: true,
         trim:true,
         lowercase:true,
@@ -41,6 +42,22 @@ const userSchema = new mongoose.Schema({
         }
     }
 });
+
+userSchema.statics.findOneByCredentials=async(email,password)=>{
+
+    const user =await User.findOne({email});
+    if(!user){
+        throw new Error('unable to login');
+    }
+
+    const isMatch = await bcrypt.compare(password,user.password);
+
+    if(!isMatch){
+        throw new Error('Unable to login');
+    }
+
+    return user;
+}
 
 //using the middleware functionality to hash password
 userSchema.pre('save',async function(next){

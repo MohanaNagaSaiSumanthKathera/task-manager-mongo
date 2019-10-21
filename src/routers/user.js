@@ -2,6 +2,14 @@ const express = require('express');
 const router = new express.Router();
 const User = require('../models/user');
 
+router.post('/user/login',async (req,res)=>{
+    try{
+        const user = await User.findOneByCredentials(req.body.email,req.body.password);
+        res.send(user);
+    }catch(e){
+        res.status(400).send();
+    }
+})
 router.post('/users', async (req,res)=>{
     const user = new User(req.body);
 
@@ -23,11 +31,9 @@ router.post('/users', async (req,res)=>{
 
 router.patch('/users/:id', async (req,res)=>{
     const updates = Object.keys(req.body);
-    console.log(updates);
     const allowedUpdates = ['name','email','password','age'];
     const _id = req.params.id;
     const isValidOperation = updates.every((update)=>allowedUpdates.includes(update));
-    console.log(isValidOperation);
     if(!isValidOperation){
         return res.status(404).send();
     }
