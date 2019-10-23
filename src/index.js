@@ -65,3 +65,19 @@ app.listen(port,()=>{
 // }
 
 // myfunc();
+
+/******for foreignField Relations */
+// const User = require('../src/models/user');
+// const Task = require('../src/models/task');
+
+// const func= async()=>{
+//     // const task = await Task.findById('5db09938fb37084b7c279804');
+//     // await task.populate('owner').execPopulate();
+//     // console.log(task);
+
+//     const user = await User.findById('5db08f54a703726c746eddf5');
+//     await user.populate('tasks').execPopulate();
+//     console.log(user.tasks);
+// }
+
+// func();
