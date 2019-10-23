@@ -8,6 +8,23 @@ const taskRouter = require('../src/routers/task');
 const app = express();
 const port = process.env.PORT || 3000;
 
+//no middleware:: new request -> run route handler
+//with middleware:: new request -> do something(like authentication) -> run route handler
+
+// app.use((req,res,next)=>{
+//    if(req.method==='POST')
+//    {
+//      res.status(404).send('post requests not allowed')
+//    }
+//    else{
+//         next();
+//    }
+// })
+
+// app.use((req,res,next)=>{
+//     res.status(503).send('under maintainance');
+// })
+
 app.use(express.json()); //grabs the req with json format
 app.use(userRouter);
 app.use(taskRouter);
