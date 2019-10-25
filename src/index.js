@@ -8,6 +8,15 @@ const taskRouter = require('../src/routers/task');
 const app = express();
 const port = process.env.PORT || 3000;
 
+/* How to use multer*/
+// const multer = require('multer');
+// const upload = multer({
+//     dest: 'images'
+// });
+// app.post('/upload',upload.single('upload'), (req,res)=>{
+//     res.send();
+// })
+
 //no middleware:: new request -> run route handler
 //with middleware:: new request -> do something(like authentication) -> run route handler
 

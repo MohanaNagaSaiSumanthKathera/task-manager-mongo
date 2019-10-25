@@ -2,6 +2,14 @@ const express = require('express');
 const router = new express.Router();
 const User = require('../models/user');
 const auth = require('../middleware/auth');
+const multer = require('multer');
+
+const upload = multer({
+    dest : 'avatars'
+});
+router.post('/users/me/avatar',upload.single('upload'),async(req,res)=>{
+    res.send();
+})
 
 router.post('/user/login',async (req,res)=>{
     try{
