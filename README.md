@@ -1,15 +1,19 @@
 # task-manager-mongo
 A Backend application created using nodejs,Expressjs,jest with mongoose package to connect with mongoDB.
 
-Deployed on heroku
+
 **********************************
+Deployed on heroku::
+
 url::https://sumanth-task-manager.herokuapp.com/
 
 Please find the Task-manager.postman_collection and delete it from project.
 
 
-Needed installers
+
 ******************************
+Needed installers::
+
 sendgrid account - https://signup.sendgrid.com/
 nodejs - https://nodejs.org/en/
 mongodb - https://www.mongodb.com/download-center/community 
@@ -20,8 +24,10 @@ mongoDB Compass -https://www.mongodb.com/download-center/compass
 Mongodb setup --> extract zip to D: drive --> create folder - mongodb-data (total 2 folders in D drive)
 cmd::: /mongodb/bin/mongod.exe --dbpath=/mongodb-data  --> opens the connection pool to connect with robo3t or mongoDB compass.
 
-steps to follow::
+
 ****************************
+steps to follow::
+
 1. git clone https://github.com/MohanaNagaSaiSumanthKathera/task-manager-mongo.git
 2. cd task-manager-mongo
 3. npm install
@@ -42,8 +48,9 @@ JWT_SECRET='secret'
 5. npm run dev --> to inject env variables and start nodemon server.
 
 
-Postman Collection usage::
 ************************************
+Postman Collection usage::
+
 1. create a user using "post /users", It will automatically set the authorization header for you"
 2. Login to user "post /user/login".
 3. get profile data using "get /users/me"
